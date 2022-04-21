@@ -1,0 +1,27 @@
+{
+  "name": "micontrato",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "@truffle/contract": "^4.5.2",
+    "@truffle/hdwallet-provider": "^2.0.6",
+    "bootstrap": "^3.4.1",
+    "chai": "^4.3.6",
+    "truffle": "^5.5.7"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "mocha": "^9.2.2"
+  },
+  "description": ""
+}

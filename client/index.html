@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="./main.css" rel="stylesheet" type="text/css">
+    <title>Agenda blockchain</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <div>
+        <h1>Foro descentralizado</h1>
+        <br>
+        <span><img src="ethereum.png"> </span><span><button id="billetera" onclick="mostrarBilletera()">Mostrar/ocultar
+                billetera</button></span><span id="account"></span><span><img src="metamask.png"> </span>
+
+
+    </div>
+
+    <aside>
+        <div id="transf">
+            <form>
+                <div>
+                    <button class="sendEthButton btn" style="background-color: white  "><b>Send Eth</b></button>
+                </div>
+                <input type="text" id="payable" placeholder="billetera de destino" />
+            
+            </form>
+
+        </div>
+    </aside>
+
+    <form id="taskForm">
+        <button>
+            <h3>Subir mensaje</h3>
+        </button>
+        <div>
+            <div><input type="text" name="title" placeholder="Autor"></div>
+            <div> <textarea name="description" placeholder="Texto del mensaje"></textarea></div>
+
+        </div>
+
+    </form>
+
+    <div id="tasksList">
+
+    </div>
+
+    <script>
+
+        destinatario = document.getElementsByName("title");
+
+
+        function mostrarBilletera() {
+
+
+            $("#account").toggle();
+
+
+        }
+
+      
+      //Transferencia a otra cuenta
+        const sendEthButton = document.querySelector('.sendEthButton');
+        sendEthButton.addEventListener('click', () => {
+            
+            
+           
+            destino = document.getElementById("payable").value;
+
+            if (destino==""){alert("Revisa si has conectado Metamask y has introducido billetera de destino")}
+
+            else
+     
+
+            ethereum
+                .request({
+                    method: 'eth_sendTransaction',
+                    params: [
+                        {
+                            from: accounts[0],
+                            to: destino,
+                            value: '',
+                            gasPrice: '',
+                            gas: '',
+                        },
+                    ],
+                })
+                .then((txHash) => console.log(txHash))
+                .catch((error) => console.error);
+        });
+
+
+     
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+    <script src="./libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./ui.js"></script>
+
+
+</body>
+
+</html>
