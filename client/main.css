@@ -1,19 +1,23 @@
 body{
-    background-color: black;
+    background-color: rgb(24, 186, 207);
     color:white;
     text-align: center;
+   
 }
 
 #anotaciones{
     border: none;
     border-radius: 40%;
-    background-color: rgb(31, 31, 32);
+    background-color: rgb(0, 0, 100);
     box-sizing: content-box;
     width: 500px;
     height: 150px;
     margin-left: auto;
     margin-right: auto;
-    
+    margin-top: auto;
+    margin-bottom: auto;
+    display:block;
+
 }
 
 #account{display: none;
@@ -24,8 +28,31 @@ button{
 font-weight: bold;}    
 
 aside{
+   
 
 margin-left: 80%;
-color:white}
+color:white;
+display:inline-flex}
+
+#aside2{
+    margin-right: 80%;
+    color:white;
+    display:inline-flex;
+    background-color: aqua;
+}
+
+footer{
+    clear:both;
+    position: -webkit-sticky;
+position: sticky;
+bottom: 0;
+background-color: rgb(28, 13, 161);
+                  
+   
+ }
+
+ p{
+     color: white;
+ }
 
 

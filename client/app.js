@@ -85,7 +85,8 @@ App = {
             const taskDone = task[3]
             const taskCreated = task[4]
 //guarda en una variable  el mensaje al completo 
-            let taskElement ='<div id=anotaciones>  <span><b>'+taskTitle+'</b></span> <div>'+taskDescription+'</div><input type="checkbox"  data-id='+taskid+' id="elCheck" onchange=App.toggleDone(this) />Recibido<p>Creada en '+new Date(taskCreated*1000).toLocaleString()+'</div><br>';
+let  taskElement  = '<div id=anotaciones> <span><b>' + taskTitle + '</b></span> <div>' + taskDescription + '</div><input type="checkbox" data- id=' + taskid + ' id="elCheck" onchange=App.toggleDone(this) />Recibido<p>Creada en ' + new  Date ( taskCreated * 1000 ) . toLocaleString ( ) + '</div><br>' ;
+
 //acumula todas los mensajes 
             html += taskElement;
          

@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <div>
-        <h1>Foro </h1>
+        <h1>Foro Blockhain</h1>
         <br>
         <span><img src="ethereum.png"> </span><span><button id="billetera" onclick="mostrarBilletera()">Mostrar/ocultar
                 billetera</button></span><span id="account"></span><span><img src="metamask.png"> </span>
@@ -27,15 +27,44 @@
     <aside>
         <div id="transf">
             <form>
+               
                 <div>
                     <button class="sendEthButton btn" style="background-color: white  "><b>Send Eth</b></button>
                 </div>
+
                 <input type="text" id="payable" placeholder="billetera de destino" />
             
             </form>
 
-        </div>
+            
+
+           
+
+            <div id="chat"><!--Start of Tawk.to Script-->
+                <script type="text/javascript">
+                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/62840082b0d10b6f3e72b595/1g39q4036';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+                })();
+                </script>
+                <!--End of Tawk.to Script--></div>
+
+       
+
+       
+
+        </span>
+        
     </aside>
+
+    <asdide2>
+        <div id="aside2"><a href="newstoday.html">Noticias Blockchain y criptomonedas</a> </div>
+    </asdide2>
 
     <form id="taskForm">
         <button>
@@ -53,78 +82,76 @@
 
     </div>
 
-    <script>
+    <footer>
+        <p id="piepagina">Desarrolado por David Merino Martínez</p>
+        </footer>
 
-        destinatario = document.getElementsByName("title");
-
-
-        function mostrarBilletera() {
-
-
-            $("#account").toggle();
+    
 
 
-        }
+<script>
 
-      
-      //Transferencia a otra cuenta
-        const sendEthButton = document.querySelector('.sendEthButton');
-        sendEthButton.addEventListener('click', () => {
-            
-            
-           
-            destino = document.getElementById("payable").value;
-
-            if (destino==""){alert("Revisa si has conectado Metamask y has introducido billetera de destino")}
-
-            else
-     
-
-            ethereum
-                .request({
-                    method: 'eth_sendTransaction',
-                    params: [
-                        {
-                            from: accounts[0],
-                            to: destino,
-                            value: '',
-                            gasPrice: '',
-                            gas: '',
-                        },
-                    ],
-                })
-                .then((txHash) => console.log(txHash))
-                .catch((error) => console.error);
-        });
+    destinatario = document.getElementsByName("title");
 
 
-     
-      
-      
+    function mostrarBilletera() {
 
 
+        $("#account").toggle();
 
 
+    }
 
+  
+  //Transferencia a otra cuenta
+    const sendEthButton = document.querySelector('.sendEthButton');
+    sendEthButton.addEventListener('click', () => {
+        
+        
+       
+        destino = document.getElementById("payable").value;
 
+        if (destino==""){alert("Revisa si has conectado Metamask y has introducido billetera de destino")}
 
+        else
+ 
+
+        ethereum
+            .request({
+                method: 'eth_sendTransaction',
+                params: [
+                    {
+                        from: accounts[0],
+                        to: destino,
+                        value: '',
+                        gasPrice: '',
+                        gas: '',
+                    },
+                ],
+            })
+            .then((txHash) => console.log(txHash))
+            .catch((error) => console.error);
+    });
+
+ 
+    
 
 
 
-
-
-
-
-    </script>
+ 
+  
+  
 
 
 
 
-    <script src="./libs/@truffle/contract/dist/truffle-contract.min.js"></script>
-    <script src="./app.js"></script>
-    <script src="./ui.js"></script>
+</script>
 
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+<script src="./app.js"></script>
+<script src="./ui.js"></script>
 </body>
-
 </html>

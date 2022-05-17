@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="./styles.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Foro Blockhain</h1>
+        <br>
+        <span><img src="ethereum.png"> </span><span><img src="metamask.png"> </span>
+
+
+    </div>
+
+    <aside>
+        <a href="index.html">
+            <button>Volver a principal</button>
+         </a>
+    </aside>
+
+    <form class="search" action="">
+        <label for="">News</label>
+        </br>
+        <div><input class="inputNews" type="text" placeholder="Intro news ex: ethereum"/></div>
+    </br>
+        <input type="submit" >
+    </br>
+    
+    </form>
+
+    <div class="container">
+        <ul class="news-list"></ul>
+    </div>
+
+    
+    <div id="chat"><!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/62840082b0d10b6f3e72b595/1g39q4036';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script--></div>
+
+    <footer>
+        
+
+        <div>
+        <p id="piepagina">Desarrolado por David Merino Martínez</p>
+        
+    </div>
+        </footer>
+
+    <script>
+        
+
+
+        const searchFrom = document.querySelector(".search");
+        const input =document.querySelector(".inputNews");
+        const newsList = document.querySelector(".news-list");
+        
+        searchFrom.addEventListener("submit", retrieve)
+        
+        function retrieve(e){
+
+            newsList.innerHTML='';
+        
+            e.preventDefault()
+        
+        
+            const apiKey="ed566da0a69d40058472d5a160bde2e2"
+        
+            let topic = input.value;
+        
+            let url = 'https://newsapi.org/v2/everything?q='+topic+'&from=2022-05-16&to=2022-05-16&sortBy=popularity&apiKey='+apiKey
+        
+            
+            fetch(url).then(res=>{
+                return res.json()
+            }).then ((data)=>{
+                console.log(data)
+                data.articles.forEach(article =>{
+                    
+                    let li =document.createElement('li');
+                    let a = document.createElement('a');
+                    a.setAttribute('href', article.url);
+                    a.setAttribute('target', '_blank');
+                    a.textContent = article.title;
+                    li.appendChild(a);
+                    
+                    newsList.appendChild(li);
+
+        
+                })
+        
+        })
+        
+        console.log(topic)
+        }
+        
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="./libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+       
+    
+</body>
+</html>
